@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\TechnicianRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\TechnicianRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -17,11 +18,14 @@ class Technician implements UserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"maintenance"})
+     * 
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
      */
     private $FirstName;
 
@@ -54,6 +58,12 @@ class Technician implements UserInterface
     {
         $this->maintenances = new ArrayCollection();
     }
+
+    public function setId(): ?int
+    {
+        return $this->id;
+    }
+    
 
     public function getId(): ?int
     {

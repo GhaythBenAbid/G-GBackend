@@ -21,12 +21,16 @@ class Owner implements UserInterface
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"product"})
+     * @Groups({"maintenance"})
+     * 
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
+     * @Groups({"maintenance"})
+     * 
      */
     private $FirstName;
 

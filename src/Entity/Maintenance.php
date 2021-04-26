@@ -16,6 +16,7 @@ class Maintenance
      * @ORM\Id
      * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="maintenances")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"maintenance"})
      */
     private $Product;
 
@@ -23,6 +24,7 @@ class Maintenance
      * @ORM\Id
      * @ORM\ManyToOne(targetEntity=Technician::class, inversedBy="maintenances")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"maintenance"})
      */
     private $Technician;
 
@@ -30,17 +32,22 @@ class Maintenance
      * @ORM\Id
      * @ORM\ManyToOne(targetEntity=Issue::class, inversedBy="maintenances")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"product"})
+     * @Groups({"maintenance"})
+     * 
      */
     private $Issue;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"maintenance"})
+     * @Groups({"maint"})
      */
     private $RepairDate;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups({"maintenance"})
+     * @Groups({"maint"})
      */
     private $ExpectedMaintenanceCost;
 

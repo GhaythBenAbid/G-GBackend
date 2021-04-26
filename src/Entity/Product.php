@@ -20,12 +20,14 @@ class Product
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"product"})
+     * @Groups({"maintenance"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"product"})
+     * @Groups({"maintenance"})
      * @Assert\NotBlank
      */
     private $ProductName;
@@ -33,6 +35,7 @@ class Product
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"product"})
+     * @Groups({"maintenance"})
      * @Assert\NotBlank
      */
     private $ProductImage;
@@ -40,6 +43,8 @@ class Product
     /**
      * @ORM\Column(type="text", length=255)
      * @Groups({"product"})
+     * @Groups({"maintenance"})
+     * 
      * @Assert\NotBlank
      */
     private $Description;
@@ -47,19 +52,25 @@ class Product
     /**
      * @ORM\Column(type="float")
      * @Groups({"product"})
+     * @Groups({"maintenance"})
+     * 
      * @Assert\NotBlank
      */
     private $initialPrice;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float" , nullable=true)
      * @Groups({"product"})
+     * @Groups({"maintenance"})
+     * 
      */
     private $SellingPrice;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"product"})
+     * @Groups({"maintenance"})
+     * 
      * @Assert\NotBlank
      */
     private $State;
@@ -68,6 +79,8 @@ class Product
      * @ORM\ManyToOne(targetEntity=Owner::class, inversedBy="products" )
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"product"})
+     * @Groups({"maintenance"})
+     * 
      * 
      */
     private $Owner;
