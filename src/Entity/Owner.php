@@ -22,6 +22,7 @@ class Owner implements UserInterface
      * @ORM\Column(type="integer")
      * @Groups({"product"})
      * @Groups({"maintenance"})
+     * @Groups({"owner"})
      * 
      */
     private $id;
@@ -30,6 +31,7 @@ class Owner implements UserInterface
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
      * @Groups({"maintenance"})
+     * @Groups({"owner"})
      * 
      */
     private $FirstName;
@@ -37,18 +39,21 @@ class Owner implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
+     * @Groups({"owner"})
      */
     private $LastName;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
+     * @Groups({"owner"})
      */
     private $Username;
 
     /**
      * @ORM\Column(type="string", length=255 , unique=true)
      * @Assert\NotBlank
+     * @Groups({"owner"})
      */
     private $Email;
 

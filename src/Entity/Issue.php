@@ -18,6 +18,7 @@ class Issue
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"maintenance"})
+     * @Groups({"issue"})
      * 
      */
     private $id;
@@ -26,6 +27,7 @@ class Issue
      * @ORM\Column(type="string", length=255)
      * @Groups({"product"})
      * @Groups({"maintenance"})
+     * @Groups({"issue"})
      * 
      */
     private $issue;

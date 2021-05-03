@@ -88,9 +88,9 @@ class Maintenance
         return $this;
     }
 
-    public function getRepairDate(): ?\DateTimeInterface
+    public function getRepairDate()
     {
-        return $this->RepairDate;
+        return $this->RepairDate->format('Y-n-d');
     }
 
     public function setRepairDate(\DateTimeInterface $RepairDate): self

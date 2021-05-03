@@ -25,12 +25,14 @@ class Technician implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"maintenance"})
      * 
      */
     private $FirstName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"maintenance"})
      */
     private $LastName;
 
